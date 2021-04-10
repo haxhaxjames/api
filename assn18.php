@@ -1,14 +1,12 @@
 <?php
 
-echo "<a target = '_blank' href='https://github.com/haxhaxjames/api.git'>Github repo</a>";
+echo "<a target = '_blank' href='https://github.com/haxhaxjames/api.git'>GitHub repo</a>";
 
 main();
 
 function main () {
 
     $apiCall = 'https://api.covid19api.com/summary';
-	// line below stopped working on CSIS server
-	// $json_string = file_get_contents($apiCall); 
 	$json_string = curl_get_contents($apiCall);
 	$obj = json_decode($json_string);
     
