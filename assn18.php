@@ -1,6 +1,6 @@
 <?php
 
-echo "<a target = '_blank' href='https://github.com/haxhaxjames/api.git'>GitHub repo</a>";
+echo "<a target = '_blank' href='https://github.com/haxhaxjames/api.git'>GitHub repo</a><br><br>";
 
 main();
 
@@ -19,8 +19,24 @@ function main () {
     }
 
     array_multisort($death_arr, SORT_DESC, $country_arr);
-    print_r($deaths_arr);
+    //print_r($death_arr);
 
+    echo "<table>";
+
+    echo "<tr>";
+    echo "<th>Country Name</th>";
+    echo "<th>Number of Deaths</th>";
+    echo "</tr>";
+
+    for ($i = 0;$i<10; $i++){
+
+        echo "<tr>";
+        echo "<td>" . $country_arr[$i] . "</td>";
+        echo "<td>" . $death_arr[$i] . "</td>";
+        echo "</tr>";
+
+    };
+    echo "</table>";
 
 };
 
